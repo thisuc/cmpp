@@ -18,7 +18,6 @@
 
 #include "php_swoole_cxx.h"
 #include <string>
-#include "ext/standard/php_smart_string.h"
 #include "Zend/zend_API.h"
 #include "php_cmpp_library.h"
 #include "swoole_cmpp_coro.h"
@@ -26,6 +25,11 @@
 
 using namespace swoole;
 using namespace coroutine;
+
+extern "C"
+{
+#include "ext/standard/php_smart_string.h"
+}
 
 void swoole_smgp_init(int module_number);
 

@@ -525,7 +525,7 @@ static zend_always_inline char* common_make_req(uint32_t cmd, uint32_t sequence_
     *out = sizeof (cmpp_head) + body_len;
     head.Total_Length = htonl(*out);
 
-    char *ret = (char*) emalloc(head.Total_Length);
+    char *ret = (char*) emalloc(*out);
     memcpy(ret, &head, sizeof (cmpp_head));
     if (body)
     {

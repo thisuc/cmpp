@@ -19,13 +19,18 @@
 #include "php_swoole_cxx.h"
 #include "swoole_cmpp_coro.h"
 #include <string>
-#include "ext/standard/php_smart_string.h"
 #include "Zend/zend_API.h"
 #include "php_cmpp_library.h"
 
 
 using namespace swoole;
 using namespace coroutine;
+
+extern "C"
+{
+#include "ext/standard/php_smart_string.h"
+}
+
 
 PHP_MINIT_FUNCTION(swoole_cmpp);
 PHP_MINFO_FUNCTION(swoole_cmpp);
